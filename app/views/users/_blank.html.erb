@@ -1,0 +1,23 @@
+
+<% if @user.errors.any? %>
+      <ul>
+          <% @user.errors.full_messages.each do |msg| %>  
+            <li><%= msg  %></li>
+          <% end %>
+      </ul
+      >    
+    <% end %>
+<%= form_for @user do |f| %>
+    <p class="center">
+      <%= f.label :username %>
+      
+      <%= f.text_field :username, :class => 'answer' %>
+    </p>
+    <p class="center">
+      <%= f.label :email %>
+      <%= f.text_area :email, :class => 'answer-description' %>
+      <br>
+       <%=  f.submit "Sign up" , :class => "inverse-btn"%> 
+       
+    </p>
+<%end%>

@@ -1,5 +1,42 @@
-<h1><%= @article.title%></h1>
-<p><%= @article.description %></p>
 
-<%= link_to "все посты", articles_path %>
-<%= link_to "убрать с глаз долой", article_path(@article), method: :delete, data: {confirm: "А может нинада?"} %>
+<div class="container ">
+         <div class="row">
+            <div class="col-md-6 col-md-push-3 panel panel-default padding-off">
+           
+                <div class="fon panel-heading">
+                    
+                    <b>by <%= @article.user.username %></b>
+                     
+                </div>
+                
+                <div class="panel-body">
+                    <b><%= @article.title %></b><br>
+                    <%= @article.description %>
+                </div>
+                
+                <div class="panel-footer fon">
+                     <%= @article.updated_at.strftime("%H:%M , %d-%m-%y") %>
+                    
+                <div class="footer-left">
+                    <%= link_to "Back", articles_path , :class => 'buttonstyle' %>
+                    <%= link_to "Edit", edit_article_path(@article) , :class => 'buttonstyle' %> 
+                    <%= link_to "Delete", article_path , :class => 'buttonstyle', method: :delete, data: {confirm: "А может нинада?" }%>
+                </div>
+                    
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+
+<div class="container bottomfixing">
+    <div class="row">
+        <div class="col-md-12">
+            <%= image_tag "look.png", width:'100%' %>
+        </div>
+    </div>  
+</div>
+
+
+

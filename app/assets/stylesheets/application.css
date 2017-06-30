@@ -13,3 +13,63 @@
  *= require_tree .
  *= require_self
  */
+ .bodyback{
+  background-image: url(back.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+ }
+ .center{
+   text-align:center;
+   font-family: 'Amatic SC', cursive;
+   color:white;
+   
+ }
+ .text{
+   font-family: 'Bahiana', cursive;
+   font-size:4em;
+   color:white;
+ }
+ .inverse-btn{
+   background-color: #222222 !important;
+   border:none;
+ }
+ .down{
+   margin-top: 10%;
+ }
+ .answer{
+  color:black;
+  font-family: 'Josefin Sans', sans-serif;
+ }
+  .answer-description{
+  color:black;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.7em;
+ }
+ .padding-off{
+   padding:0;
+   font-family: 'Josefin Sans', sans-serif;
+   border:none;
+ }
+.footer-left{
+   float:right;
+}
+.buttonstyle{
+  border:1px solid #222222;
+  border-radius: 5px;
+  color:white;
+  background: #222222;
+  padding: 5px;
+}
+.active{
+   color:white !important;
+}
+.fon{
+  background:#24292e !important;
+  color:white !important;
+}
+.bottomfixing{
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   width:100%;
+}

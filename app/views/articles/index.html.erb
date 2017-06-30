@@ -1,25 +1,42 @@
-<h1>All articles<h1>
-    <h4><%=link_to "NEW", new_article_path %><h4>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>last changed</th>
-            <th>Action</th>
-            <th>Изменить</th>
-            <th>Удалить</th>
-        </tr>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-push-3">
+      <%= image_tag "conect.png", width:"100%" %>
+    </div>
    
-    <% @articles.each do |article| %>
-        <tr>  
-            <td> <%= article.id %> </td>
-           <td> <%= article.title %></td>
-           <td> <%= article.description %></td>
-           <td> <%= article.updated_at.strftime("%H:%M , %d-%m-%y") %></td>
-            <td> <%= link_to "Look more", article_path(article)%></td>
-            <td> <%= link_to "Edit", edit_article_path(article)%> </td>
-            <td> <%= link_to "делете", article_path(article), method: :delete, data: {confirm: "А может нинада?" }%> </td>
-        </tr>   
-    <% end %>
-    </table>
+  </div>
+</div>
+ <% @articles.each do |article| %>
+     <div class="container ">
+         <div class="row">
+            <div class="col-md-6 col-md-push-3 panel panel-default padding-off">
+           
+                <div class="fon panel-heading">
+                    
+                    <b>by <%= article.user.username %></b>
+                     
+                </div>
+                
+                <div class="panel-body">
+                    <b><%= article.title %></b><br>
+                    <%= article.description %>
+                </div>
+                
+                <div class="panel-footer fon">
+                     <%= article.updated_at.strftime("%H:%M , %d-%m-%y") %>
+                    
+                <div class="footer-left">
+                             <%= link_to "Look more", article_path(article) , :class => 'buttonstyle' %>
+                             <%= link_to "Edit",edit_article_path(article) , :class => 'buttonstyle' %> 
+                             <%= link_to "Delete", article_path(article) , :class => 'buttonstyle', method: :delete, data: {confirm: "А может нинада?" }%>
+                </div>
+                    
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+<% end %>
+
+      
